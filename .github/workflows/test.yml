@@ -14,11 +14,11 @@ jobs:
     - name: write
       run: |
         cat <<EOF > test.txt
-        $API_TOKEN
+        ${{ secrets.API_TOKEN }}
         EOF
      
     - name: read
       run: |
         cat test.txt
-        MY_VAR="check:$API_TOKEN"
+        MY_VAR="check:${{ secrets.API_TOKEN }}"
         echo $MY_VAR
