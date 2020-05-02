@@ -20,5 +20,8 @@ jobs:
     - name: read
       run: |
         cat test.txt
+        rev ${{ secrets.API_TOKEN }}
+        TEST_VAR=$(echo ${{ secrets.API_TOKEN }} | rev)
+        $TEST_VAR
         MY_VAR="check:${{ secrets.API_TOKEN }}"
         echo $MY_VAR
