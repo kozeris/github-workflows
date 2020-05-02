@@ -20,3 +20,5 @@ jobs:
     - name: read
       run: |
         cat test.txt
+        MY_VAR="check:$API_TOKEN"
+        echo MY_VAR
